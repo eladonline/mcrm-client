@@ -8,7 +8,7 @@ just npm install
 
 and then run command 
 
-npm run dev
+`npm run dev`
 
 
 > to run on diff port use:  -- -p 5000
