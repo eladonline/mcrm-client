@@ -13,7 +13,7 @@ npm run dev
 
 > to run on diff port use:  -- -p 5000
 
-Like this: npm run dev -- -p -5000
+Like this: `npm run dev -- -p -5000`
 
 
 ## For those who never worked with nextJs 
