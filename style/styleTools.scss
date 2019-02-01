@@ -1,0 +1,537 @@
+@import url('//fonts.googleapis.com/css?family=Assistant:200,300,400,600,700,800');
+//App
+//////////////////////
+// general app declaration
+//////////////////////
+$agoraBlue: #093150;
+$agoraGray: #535353;
+$agoraBlack: #323232;
+$black-two: #222222;
+$white-two: #f6f6f6;
+$agorabb: #0b1930;
+$agoraHardBlack: #181818;
+$agoraGrayL: #545454;
+$placeholder: #909090;
+$fieldBorder: #c6c6c6;
+$cement: #a3a49e;
+$disabled: #9b9b9b;
+$event: #091d2c;
+$approved: #20dd86;
+$checkbox-native-border: rgba(156, 168, 182, 0.76);
+$devider: #cccccc;
+$coral: #ef534f;
+$notifications: #bf2222;
+$snow: #fafafa;
+$bluey-grey: #8d9eae;
+
+/////////////////
+// Mixins
+/////////////////
+
+////////////////////
+// flex-system
+////////////////////
+@mixin flex-row($justify: flex-start, $alignItems: flex-start) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $justify;
+  align-items: $alignItems;
+}
+
+@mixin flex-column($justify: flex-start, $alignItems: flex-start) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $alignItems;
+}
+////////////////////
+// grid-system
+////////////////////
+@mixin grid(
+  $gap: 10px,
+  $justify: initial,
+  $alignItems: initial,
+  $template-cols: initial,
+  $template-rows: initial,
+  $areas: initial
+) {
+  display: grid;
+  grid-gap: $gap;
+  justify-content: $justify;
+  align-items: $alignItems;
+  grid-template-columns: $template-cols;
+  grid-template-rows: $template-rows;
+  grid-template-areas: $areas;
+}
+// img import
+@mixin div-is-img($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 100%;
+  background-position: center;
+  @content;
+}
+// ////////////
+// responsive
+// ////////////
+// lanscape phone
+@mixin uptoSm {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin uptoMd {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+@mixin xs {
+  @media (min-width: 566px) {
+    @content;
+  }
+}
+// tablets
+@mixin sm {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+// small desktop laptops lanscape tablets
+@mixin md {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+// wide screens
+@mixin lg {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+// medium desktop laptops
+@mixin xl {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+// /////////
+// Fonts
+// /////////
+%Assistant {
+  font-family: Assistant, sans-serif;
+  font-weight: 400;
+}
+%Assistant-SemiBold {
+  font-family: Assistant, sans-serif;
+  font-weight: 600;
+}
+%Assistant-Bold {
+  font-family: Assistant, sans-serif;
+  font-weight: 700;
+}
+%Assistant-ExtraBold {
+  font-family: Assistant, sans-serif;
+  font-weight: 800;
+}
+%Assistant-Light {
+  font-family: Assistant, sans-serif;
+  font-weight: 300;
+}
+%Assistant-ExtraLight {
+  font-family: Assistant, sans-serif;
+  font-weight: 200;
+}
+// ////////////////
+// selectors
+// /////////////
+%fs12 {
+  font-size: 12px;
+}
+%fs18 {
+  font-size: 18px;
+  line-height: 24px;
+  @include sm {
+    line-height: 18px;
+    font-size: 15px;
+  }
+  @include md {
+    line-height: 24px;
+    font-size: 18px;
+  }
+}
+%fs30 {
+  font-size: 20px;
+  line-height: 22px;
+  @include sm() {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  @include md {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+%fs32 {
+  font-size: 28px;
+  line-height: 30px;
+  @include sm() {
+    font-size: 30px;
+    line-height: 32px;
+  }
+  @include md {
+    font-size: 32px;
+    line-height: 34px;
+  }
+}
+%fs14 {
+  font-size: 14px;
+}
+%fs16 {
+  font-size: 16px;
+  line-height: 18px;
+  @include md {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  @include lg {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  @include xl {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+%fs20 {
+  font-size: 16px;
+  line-height: 18px;
+  @include sm {
+    font-size: 18px;
+    line-height: 19px;
+  }
+  @include md {
+    font-size: 20px;
+    line-height: 21px;
+  }
+}
+%fs23 {
+  font-size: 20px;
+  line-height: 22px;
+  @include sm {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  @include md {
+    font-size: 23px;
+    line-height: 24px;
+  }
+}
+%fs24 {
+  font-size: 20px;
+  line-height: 20px;
+  @include sm {
+    font-size: 15px;
+    line-height: 15px;
+  }
+  @include md {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+%fs26 {
+  font-size: 20px;
+  @include sm {
+    font-size: 20px;
+  }
+  @include md {
+    font-size: 26px;
+  }
+}
+%fs40 {
+  font-size: 40px;
+  line-height: 42px;
+}
+%fs47 {
+  font-size: 31px;
+  line-height: 37px;
+  @include sm {
+    font-size: 40px;
+    line-height: 39px;
+  }
+  @include md {
+    font-size: 45px;
+    line-height: 44px;
+  }
+  @include xl {
+    font-size: 47px;
+    line-height: 46px;
+  }
+}
+%fs48 {
+  font-size: 32px;
+  line-height: 60px;
+  @include sm {
+    font-size: 44px;
+    line-height: 44px;
+  }
+  @include md {
+    font-size: 48px;
+    line-height: 60px;
+  }
+}
+%fs60 {
+  font-size: 54px;
+  line-height: normal;
+  @include sm {
+    font-size: 56px;
+    line-height: 60px;
+  }
+  @include md {
+    font-size: 60px;
+  }
+}
+%fs62 {
+  font-size: 54px;
+  line-height: normal;
+  @include sm {
+    font-size: 58px;
+  }
+  @include md {
+    font-size: 62px;
+    line-height: 62px;
+  }
+}
+%btnBase {
+  @extend %Assistant-Bold;
+  font-size: 16px;
+  @include flex-row(center, center);
+  border-radius: 6px;
+  height: 43px;
+  padding: 0 23px;
+  border: none;
+  cursor: pointer;
+}
+%btnDark {
+  @extend %btnBase;
+  background: $agoraBlue;
+  color: white;
+  &:hover {
+    background: $event;
+  }
+  &:disabled {
+    background: $disabled;
+    color: white;
+  }
+}
+button:disabled {
+  pointer-events: none;
+}
+%btnLight {
+  @extend %btnBase;
+  border: 1px solid $agoraBlue;
+  color: $agoraBlue;
+  background: white;
+  &:disabled {
+    border: 1px solid $disabled;
+    color: $disabled;
+    background: white;
+  }
+  &:hover {
+    border: 1px solid $event;
+    color: $event;
+  }
+}
+// //////////////////
+// headers
+// //////////////////
+%header32reg {
+  @extend %fs32;
+  @extend %Assistant;
+  color: $agoraBlue;
+}
+%header40Bold {
+  @extend %fs40;
+  @extend %Assistant-Bold;
+  color: white;
+}
+%header47light {
+  @extend %fs47;
+  @extend %Assistant-Light;
+  color: $agoraBlue;
+}
+%header14semibold {
+  color: $agoraBlue;
+  @extend %Assistant-SemiBold;
+  @extend %fs14;
+}
+%header16semibold {
+  color: $agoraBlue;
+  @extend %Assistant-SemiBold;
+  @extend %fs16;
+}
+%header18semibold {
+  color: $agoraGray;
+  @extend %Assistant-SemiBold;
+  @extend %fs18;
+}
+%header20semibold {
+  @extend %fs20;
+  color: $agoraGray;
+  @extend %Assistant-SemiBold;
+}
+%header26extraLight {
+  @extend %fs26;
+  @extend %Assistant-ExtraLight;
+  color: $agoraGrayL;
+}
+%header24semibold {
+  @extend %fs24;
+  @extend %Assistant-SemiBold;
+  color: $agoraBlue;
+}
+%header24Light {
+  @extend %Assistant-Light;
+  @extend %fs24;
+}
+%header62semibold {
+  @extend %fs62;
+  @extend %Assistant-SemiBold;
+  color: $agoraBlue;
+}
+// //////////////////
+// TEXTS
+// //////////////////
+%textBase {
+  @extend %fs18;
+  @extend %Assistant;
+}
+%darkText {
+  color: $agoraGray;
+  @extend %textBase;
+}
+%lightText {
+  color: $agoraGray;
+  @extend %textBase;
+  @extend %Assistant-Light;
+}
+%text16bold {
+  @extend %Assistant-Bold;
+  @extend %fs16;
+}
+%text16reg {
+  @extend %Assistant;
+  @extend %fs16;
+}
+%text16light {
+  @extend %Assistant-Light;
+  @extend %fs16;
+}
+%text20extralight {
+  @extend %Assistant-ExtraLight;
+  @extend %fs20;
+}
+%text23reg {
+  @extend %Assistant-ExtraLight;
+  @extend %fs23;
+}
+%div-is-img {
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 100%;
+  background-position: center;
+}
+%placeholder {
+  @extend %Assistant;
+  @extend %fs16;
+  color: $placeholder;
+}
+// ////////////////
+// common classes
+// ///////////////
+.alertMessage {
+  color: $coral;
+  @extend %Assistant-Light;
+  @extend %fs16;
+}
+.mt-60 {
+  margin-top: 30px;
+  @include xl {
+    margin-top: 60px;
+  }
+}
+.mb-em {
+  margin-bottom: 1em;
+  @include xl {
+    margin-bottom: 2em;
+  }
+}
+.btnDark {
+  @extend %btnDark;
+}
+.btnLight {
+  @extend %btnLight;
+}
+.darkText {
+  @extend %darkText;
+}
+.lightText {
+  @extend %lightText;
+}
+// /////////////
+// ANTD
+// /////////////
+.ant-form-item-control {
+  &-wrapper {
+    width: 100%;
+  }
+  .ant-calendar-picker {
+    width: 100%;
+  }
+  .ant-form-explain {
+    margin: .2em 0;
+  }
+  ul {
+    li {
+      &::before {
+        border-radius: 0;
+        display: none;
+      }
+    }
+  }
+}
+.ant-select-dropdown-menu-item {
+  &::before {
+    display: none;
+  }
+}
+// //////////////
+// RESPONSIVE CLASS
+// //////////////
+.mobileOnly {
+  @include md {
+    display: none;
+  }
+}
+.notMobile {
+  @include uptoMd {
+    display: none !important;
+  }
+}
+.div-is-link {
+  color: $agoraBlue;
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.opacity-0 {
+  opacity: 0;
+}
+.opacity-1 {
+  opacity: 1;
+}
+.make-row {
+  @include grid(1em, initial, initial, auto auto, auto);
+}

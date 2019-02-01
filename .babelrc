@@ -1,5 +1,6 @@
 {
-  "presets": ["next/babel"],
+  "presets": ["@babel/env", "@babel/react", "next/babel"],
+
   "plugins": [
     [
       "module-resolver",
@@ -7,13 +8,19 @@
         "root": ["./"],
         "alias": {
           "src": "./src",
-          "static": "./static",
           "style": "./style",
           "components": "./src/components"
         }
       }
     ],
-
+    // "emotion",
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": "less"
+      }
+    ],
     [
       "inline-import",
       {
