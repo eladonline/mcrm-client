@@ -3,7 +3,7 @@ import getConfig from 'next/config';
 
 const { publicRuntimeConfig } = getConfig();
 
-const urlByEnv = publicRuntimeConfig.url;
+const urlByEnv = publicRuntimeConfig.url || '';
 
 export class Post {
   post = ({ url, body }) => {

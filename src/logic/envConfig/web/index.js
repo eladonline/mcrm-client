@@ -7,7 +7,7 @@ const dev = {
 };
 const prod = {
   ...common,
-  url: 'https://fcc-frstapp.herokuapp.com/',
+  url: '',
   env: 'deployment'
 };
 const local = {
