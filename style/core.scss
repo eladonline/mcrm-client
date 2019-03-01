@@ -1,1 +1,51 @@
 @import './styleTools.scss';
+@import './pages/pages.scss';
+@import './modal.scss';
+@import './defaultTable.scss';
+@import './inputs.scss';
+
+body {
+  background-color: $body !important;
+}
+
+.homepage {
+  @include grid(1em, initial, initial, auto, auto);
+  @include md {
+    height: 100vh;
+    @include grid(1em, initial, initial, 286px auto, max-content);
+  }
+  background: $body;
+  &__main-content {
+    width: 100%;
+    padding: 2em;
+  }
+}
+
+.ant-menu-root {
+  @include md {
+    min-height: 100vh;
+  }
+  @extend %Assistant-Bold;
+  .ant-menu-item-group-title {
+    color: $fieldBorder !important;
+  }
+  .ant-menu-submenu-title {
+    span {
+      font-size: 20px;
+      @include flex-row(flex-start, center);
+    }
+  }
+  ul,
+  div {
+    font-size: 18px;
+  }
+  .ant-menu-item {
+    font-size: 16px !important;
+  }
+}
+
+
+
+.ant-input {
+
+}

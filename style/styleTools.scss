@@ -3,12 +3,14 @@
 //////////////////////
 // general app declaration
 //////////////////////
-$agoraBlue: #093150;
-$agoraGray: #535353;
+$menu: #12ade2;
+$body: #092056;
+$agoraBlue: blue;
+$agoraGray: gray;
 $agoraBlack: #323232;
 $black-two: #222222;
 $white-two: #f6f6f6;
-$agorabb: #0b1930;
+$agorabb: #141B80 ;
 $agoraHardBlack: #181818;
 $agoraGrayL: #545454;
 $placeholder: #909090;
@@ -481,15 +483,25 @@ button:disabled {
 // /////////////
 // ANTD
 // /////////////
+.ant-form-item-label {
+  label {
+    @extend %Assistant;
+    font-size: 20px !important;
+    color: white !important;
+    margin-right: 1em;
+    width: unset;
+  }
+}
 .ant-form-item-control {
   &-wrapper {
+    height: 50px;
     width: 100%;
   }
   .ant-calendar-picker {
     width: 100%;
   }
   .ant-form-explain {
-    margin: .2em 0;
+    margin: 0.2em 0;
   }
   ul {
     li {
@@ -535,3 +547,11 @@ button:disabled {
 .make-row {
   @include grid(1em, initial, initial, auto auto, auto);
 }
+.bold {
+  font-weight: 800;
+}
+.server-response-reject {
+  color: coral;
+  @extend %fs16;
+}
+

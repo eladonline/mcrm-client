@@ -1,0 +1,56 @@
+.global-forms {
+  @include grid(2em, initial, initial, auto, 100px);
+  @include md {
+    @include grid(2em, initial, initial, repeat(4, auto), 100px);
+  }
+  .button-container {
+    grid-column: 1 / span 4;
+    button {
+      margin: auto;
+      width: 150px;
+    }
+  }
+}
+
+#add-client-form,
+#remove-client-form,
+#edit-client-form,
+#search-form {
+  @extend .global-forms;
+}
+
+.remove-client,
+.find-clients {
+  @include grid(2em, initial, initial, auto, auto);
+}
+.table-container {
+  @include grid(1em, initial, initial, auto, auto);
+  .overlay {
+    transition: 0.3s ease;
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    color: white;
+    @include flex-row(center, center);
+    @extend %header18semibold;
+    &:hover {
+      opacity: 1;
+      background: rgba(10, 10, 10, 0.9);
+    }
+    span:hover {
+      transform: scale(1.2);
+      transition: 0.25s ease;
+
+      color: $coral;
+    }
+  }
+}
+
+.edit-client {
+  @include grid(0.85em, initial, initial, auto, auto);
+  #edit-client-form {
+    margin-bottom: 2em;
+  }
+}

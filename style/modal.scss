@@ -1,0 +1,14 @@
+////////
+//MODAL
+/////////
+.ant-modal-header {
+  background: $agorabb !important;
+  .ant-modal-title {
+    color: white;
+  }
+}
+.ant-modal-content {
+  @include grid(1em, initial, initial, auto, auto);
+  padding: 1em;
+  background: $agorabb !important;
+}
