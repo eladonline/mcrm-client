@@ -1,10 +1,15 @@
 import React, { PureComponent } from 'react';
 import { Form } from 'antd';
-import ClientList from 'src/components/table/ClientsList';
-import FindByParam from 'src/components/find/FindByParam';
+import ClientList from 'src/components/table/ClientTable';
+import { findClients } from 'src/components/asyncs';
 
 class FindClients extends PureComponent {
   state = { listOfClients: [], serverMessage: '' };
+  componentDidMount = () => {
+    findClients({ url: `api/client/query/find?` }, (val, props) => {
+      this.setState({ listOfClients: val, ...props });
+    });
+  };
 
   handleFindClientResults = (val, props) => {
     this.setState({ listOfClients: [...val], ...props });
@@ -13,9 +18,6 @@ class FindClients extends PureComponent {
   render() {
     return (
       <div className="find-clients">
-        <Form id="search-form">
-          <FindByParam form={this.props.form} handleResults={this.handleFindClientResults} />
-        </Form>
         {/** list of the Users found in DB */}
         <ClientList readOnly={true} list={this.state.listOfClients} />
         {/** server Message */}

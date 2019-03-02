@@ -1,0 +1,59 @@
+.default-table {
+  position: relative;
+  @extend %Assistant;
+  @extend %fs20;
+  @include grid(0em, initial, initial, auto, auto);
+  @include md {
+    @include grid(0em, initial, initial, auto, auto);
+  }
+  tr {
+    @include grid(0em, initial, initial, auto, auto);
+    &:not(.full-row) {
+      @include md {
+        @include grid(0em, initial, initial, repeat(4, 25%), auto);
+      }
+    }
+    &.full-row {
+      @include flex-row(center, center);
+      text-align: center;
+      @include grid(0em, initial, initial, 1fr, auto);
+    }
+    th {
+      padding: 0.3em 0.2em;
+      color: $agoraGray;
+      background: rgb(34, 26, 26);
+      border: 1px solid $agoraBlack;
+    }
+    td {
+      padding: 0.2em;
+      border: 1px solid $agoraBlack;
+      background: white;
+      color: $agoraBlack;
+    }
+  }
+}
+
+.table-container {
+  @include grid(1em, initial, initial, auto, auto);
+  .overlay {
+    transition: 0.3s ease;
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    color: white;
+    @include flex-row(center, center);
+    @extend %header18semibold;
+    &:hover {
+      opacity: 1;
+      background: rgba(10, 10, 10, 0.9);
+    }
+    span:hover {
+      transform: scale(1.2);
+      transition: 0.25s ease;
+
+      color: $coral;
+    }
+  }
+}

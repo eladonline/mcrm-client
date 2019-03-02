@@ -5,7 +5,6 @@ const MenuItemGroup = Menu.ItemGroup;
 
 class Sider extends React.Component {
   handleClick = e => {
-    console.log('click ', e);
     const [key, section] = e.keyPath;
     if (section === 'A_R_E') {
       this.props.handleMenuClick(cbk_A_R_E(key));
@@ -28,16 +27,16 @@ class Sider extends React.Component {
           key="A_R_E"
           title={
             <span>
-              <Icon type="mail" />
+              <Icon type="appstore" />
               <span>Add / Remove / Edit</span>
             </span>
           }
         >
-          <MenuItemGroup key="g1" title="Group">
+          {/* <MenuItemGroup key="g1" title="Group"> */}
             <Menu.Item key="add">Add</Menu.Item>
             <Menu.Item key="remove">Remove</Menu.Item>
             <Menu.Item key="edit">Edit</Menu.Item>
-          </MenuItemGroup>
+          {/* </MenuItemGroup> */}
         </SubMenu>
         <SubMenu
           key="search"

@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import { Form, Input, Select } from 'antd';
 import { Req } from 'src/components/req';
-import ClientList from 'src/components/table/ClientsList';
+import ClientList from 'src/components/table/ClientTable';
 import { deleteClient } from 'src/components/asyncs';
-import FindByParam from 'src/components/find/FindByParam';
+import FindByParam from 'src/components/find/FindByParamSelect';
 
 const req = new Req();
 

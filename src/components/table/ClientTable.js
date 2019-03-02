@@ -1,8 +1,9 @@
-const ClientsList = ({ list, handleClick, type, readOnly }) => {
+const ClientsTable = ({ list, handleClick, type, readOnly }) => {
   return list.map((obj, i) => {
     return (
       <div key={`remove_client_table_${i}`} className="table-container">
-        <table className="defaultTable">
+        <table className="default-table">
+          {/** do not appear in Read only mode */}
           {!readOnly && (
             <span className="overlay">
               <span
@@ -22,24 +23,35 @@ const ClientsList = ({ list, handleClick, type, readOnly }) => {
           </tr>
           <tr>
             <td>
-              <span className="mobileOnly bold">Name: </span> {obj.Name}
+              <span className="mobileOnly bold">Name: </span> {obj.name}
             </td>
             <td>
               <span className="mobileOnly bold">Last Name: </span>
-              {obj.LastName}
+              {obj.lastName}
             </td>
             <td>
               <span className="mobileOnly bold">Email: </span>
-              {obj.Email}
+              {obj.email}
             </td>
             <td>
-              <span className="mobileOnly bold">Phone: </span>0{obj.Phone}
+              <span className="mobileOnly bold">Phone: </span>0{obj.phone}
             </td>
           </tr>
+          {/** appear only if img uploaded */}
+          {obj.img && (
+            <>
+              <tr className="full-row">
+                <th>Photo</th>
+              </tr>
+              <tr className="full-row">
+                <td>ad</td>
+              </tr>
+            </>
+          )}
         </table>
       </div>
     );
   });
 };
 
-export default ClientsList;
+export default ClientsTable;

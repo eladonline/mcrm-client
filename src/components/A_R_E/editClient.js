@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import { Form } from 'antd';
-import ClientList from 'src/components/table/ClientsList';
+import ClientList from 'src/components/table/ClientTable';
 import { findClients, updateClients } from 'src/components/asyncs';
 import EditModal from 'src/components/modals/Edit';
 import ClientEditForm from 'src/components/forms/clientEdit';
-import FindByParam from 'src/components/find/FindByParam';
+import FindByParam from 'src/components/find/FindByParamSelect';
 class EditClient extends PureComponent {
   state = {
     listOfClients: [],

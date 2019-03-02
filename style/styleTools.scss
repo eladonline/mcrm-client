@@ -10,7 +10,7 @@ $agoraGray: gray;
 $agoraBlack: #323232;
 $black-two: #222222;
 $white-two: #f6f6f6;
-$agorabb: #141B80 ;
+$agorabb: #141b80;
 $agoraHardBlack: #181818;
 $agoraGrayL: #545454;
 $placeholder: #909090;
@@ -551,7 +551,11 @@ button:disabled {
   font-weight: 800;
 }
 .server-response-reject {
-  color: coral;
+  color: $coral;
   @extend %fs16;
 }
 
+.server-response-accept {
+  color: $approved;
+  @extend %fs16;
+}

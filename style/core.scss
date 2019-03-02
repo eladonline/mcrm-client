@@ -1,11 +1,15 @@
 @import './styleTools.scss';
 @import './pages/pages.scss';
 @import './modal.scss';
-@import './defaultTable.scss';
 @import './inputs.scss';
+@import './table.scss';
 
 body {
   background-color: $body !important;
+
+  div {
+    @extend %Assistant;
+  }
 }
 
 .homepage {
@@ -20,14 +24,16 @@ body {
     padding: 2em;
   }
 }
-
+/////////////
+// MENU
+////////////
 .ant-menu-root {
   @include md {
     min-height: 100vh;
   }
   @extend %Assistant-Bold;
   .ant-menu-item-group-title {
-    color: $fieldBorder !important;
+    color: $fieldBorder;
   }
   .ant-menu-submenu-title {
     span {
@@ -42,10 +48,4 @@ body {
   .ant-menu-item {
     font-size: 16px !important;
   }
-}
-
-
-
-.ant-input {
-
 }

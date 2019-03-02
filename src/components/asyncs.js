@@ -7,6 +7,7 @@ const req = new Req();
 export async function findClients(data, cb) {
   try {
     const aList = await req.get(data);
+    console.log(aList)
     // if Error return the error message
     if (aList.data.error) {
       cb([], { serverMessage: aList.data.error });

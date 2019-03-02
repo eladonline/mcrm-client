@@ -36,10 +36,10 @@ export default class Find extends PureComponent {
               onChange={() => this.setState({ serverMessage: '' })}
               placeholder="Please select a search method"
             >
-              <Select.Option value="Name">Name</Select.Option>
-              <Select.Option value="LastName">Last name</Select.Option>
-              <Select.Option value="Phone">Phone</Select.Option>
-              <Select.Option value="Email">Email</Select.Option>
+              <Select.Option value="name">Name</Select.Option>
+              <Select.Option value="lastName">Last name</Select.Option>
+              <Select.Option value="phone">Phone</Select.Option>
+              <Select.Option value="email">Email</Select.Option>
             </Select>
           )}
         </Form.Item>
