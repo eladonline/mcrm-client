@@ -3,6 +3,7 @@
 @import './modal.scss';
 @import './inputs.scss';
 @import './table.scss';
+@import './clientCards.scss';
 
 body {
   background-color: $body !important;
@@ -47,5 +48,28 @@ body {
   }
   .ant-menu-item {
     font-size: 16px !important;
+  }
+}
+
+.item-list {
+  color: white;
+  padding: 2em;
+  @extend %fs20;
+  div {
+    input {
+      color: black;
+    }
+  }
+  &__container {
+    border: 1px solid white;
+    div {
+      padding: 1em;
+    }
+    &[data-selected='true'] {
+      background: green;
+    }
+  }
+  button {
+    margin-top: 1em;
   }
 }

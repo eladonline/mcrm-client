@@ -1,0 +1,23 @@
+.client-card-history {
+  @extend %Assistant;
+  background: white;
+  height: 40px;
+  overflow: hidden;
+  &[data-open='true'] {
+    height: unset;
+  }
+  &__expand {
+      padding: .5em;
+    @include flex-row(center);
+    width: 100%;
+    cursor: pointer;
+  }
+}
+.purchase-table {
+  padding: 1em;
+  ul {
+    list-style: none;
+    padding: 1em;
+    border: 1px solid $agoraGrayL;
+  }
+}

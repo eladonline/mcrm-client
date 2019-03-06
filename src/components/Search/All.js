@@ -19,7 +19,7 @@ class FindClients extends PureComponent {
     return (
       <div className="find-clients">
         {/** list of the Users found in DB */}
-        <ClientList readOnly={true} list={this.state.listOfClients} />
+        <ClientList readOnly={true} list={this.state.listOfClients} />>
         {/** server Message */}
         <div className="server-response-reject">{this.state.serverMessage}</div>
       </div>

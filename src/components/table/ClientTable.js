@@ -1,3 +1,5 @@
+import ClientCard from 'src/components/cards/History.js';
+
 const ClientsTable = ({ list, handleClick, type, readOnly }) => {
   return list.map((obj, i) => {
     return (
@@ -38,16 +40,7 @@ const ClientsTable = ({ list, handleClick, type, readOnly }) => {
             </td>
           </tr>
           {/** appear only if img uploaded */}
-          {obj.img && (
-            <>
-              <tr className="full-row">
-                <th>Photo</th>
-              </tr>
-              <tr className="full-row">
-                <td>ad</td>
-              </tr>
-            </>
-          )}
+          {readOnly && <ClientCard aPurchases={obj.purchases} />}
         </table>
       </div>
     );
